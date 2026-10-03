@@ -404,6 +404,6 @@ export function createHandController(options = {}) {
       video.remove();
     },
     get active() { return active; },
-    get stats() { return { ...metrics }; },
+    get stats() { return { ...metrics, diagnostics: interpreter.diagnostics }; },
   };
 }

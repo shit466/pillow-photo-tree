@@ -3,6 +3,7 @@ import * as THREE from 'three';
 const clamp = THREE.MathUtils.clamp;
 const damp = (a, b, speed, dt) => THREE.MathUtils.damp(a, b, speed, dt);
 const BASE = import.meta.env.BASE_URL;
+const BUILD_VERSION = __BUILD_VERSION__;
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 function rng(seed = 932817) {
@@ -27,6 +28,7 @@ async function loadImageTexture(src, maxSize, signal) {
   const url = new URL(src, new URL(BASE,location.href));
   // Local photos only: no third-party image host receives a visitor's request.
   if(url.origin!==location.origin) throw new Error('照片配置仅支持站内文件');
+  url.searchParams.set('v', BUILD_VERSION);
   const response=await fetch(url,{signal}); if(!response.ok)throw new Error('照片未找到');
   const blob=await response.blob();if(blob.size>16*1024*1024)throw new Error('照片过大，请先压缩');
   const objectURL=URL.createObjectURL(blob);const img=new Image();img.decoding='async';
@@ -113,7 +115,7 @@ export async function createPhotoScene({container,onSelect,onStar,onStats,onPhot
   for(let i=0;i<16;i++){const h=.15+random()*.65,a=random()*Math.PI*2,r=(1-h)*1.8;const mesh=new THREE.Mesh(ornamentGeo,ornamentMat);const home=new THREE.Vector3(Math.cos(a)*r,h*4.7-2.35,Math.sin(a)*r);mesh.position.copy(home);root.add(mesh);ornaments.push({mesh,home,away:new THREE.Vector3((random()-.5)*10,(random()-.5)*6,(random()-.5)*8)});}
 
   let manifest;
-  try{const r=await fetch(`${BASE}photos.json`,{signal:abort.signal});if(!r.ok)throw new Error();manifest=await r.json();}
+  try{const r=await fetch(`${BASE}photos.json?v=${BUILD_VERSION}`,{signal:abort.signal});if(!r.ok)throw new Error();manifest=await r.json();}
   catch{manifest={photos:[]};onPhotoError?.('照片配置没有找到，可以先转动星光树。');}
   const entries=(Array.isArray(manifest)?manifest:manifest.photos||[]).map(p=>typeof p==='string'?{src:p,alt:'照片'}:p).filter(p=>p&&typeof p.src==='string').slice(0,36);
   if(!entries.length)onPhotoError?.('还没有照片，放入 photos 文件夹后即可点亮。');
