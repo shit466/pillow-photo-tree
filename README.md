@@ -1,5 +1,7 @@
 # 枕头的照片树 · Demo
 
+[手机打开在线 Demo](https://shit466.github.io/pillow-photo-tree/) · [GitHub 源码](https://github.com/shit466/pillow-photo-tree)
+
 深色星空中的 Three.js 照片圣诞树，支持触控、摄像头手势、照片聚焦、照片宇宙与隐藏三次愿望券。当前使用 12 张本地压缩的风景示例照片，替换照片不需要修改场景核心代码。
 
 ## 本地运行
