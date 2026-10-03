@@ -1,0 +1,18 @@
+Demo scenic photos — Unsplash
+License: Unsplash License (https://unsplash.com/license)
+Photos are downloaded for this demo and locally resized/re-encoded as WebP.
+No portrait or personal user photograph is included.
+
+Individual sources:
+photos/demo-01.webp | 雪山 | https://images.unsplash.com/photo-1506905925346-21bda4d32df4 | Unsplash contributors
+photos/demo-02.webp | 湖畔 | https://images.unsplash.com/photo-1470770841072-f978cf4d019e | Unsplash contributors
+photos/demo-03.webp | 星夜 | https://images.unsplash.com/photo-1519681393784-d120267933ba | Unsplash contributors
+photos/demo-04.webp | 海面 | https://images.unsplash.com/photo-1518837695005-2083093ee35b | Unsplash contributors
+photos/demo-05.webp | 森林 | https://images.unsplash.com/photo-1441974231531-c6227db76b6e | Unsplash contributors
+photos/demo-06.webp | 海岸 | https://images.unsplash.com/photo-1507525428034-b723cf961d3e | Unsplash contributors
+photos/demo-07.webp | 晨光 | https://images.unsplash.com/photo-1470252649378-9c29740c9fa8 | Unsplash contributors
+photos/demo-08.webp | 绿意 | https://images.unsplash.com/photo-1497250681960-ef046c08a56e | Unsplash contributors
+photos/demo-09.webp | 巴黎 | https://images.unsplash.com/photo-1502602898657-3e91760cbb34 | Unsplash contributors
+photos/demo-10.webp | 夏日 | https://images.unsplash.com/photo-1473496169904-658ba7c44d8a | Unsplash contributors
+photos/demo-11.webp | 山湖 | https://images.unsplash.com/photo-1501785888041-af3ef285b470 | Unsplash contributors
+photos/demo-12.webp | 远行 | https://images.unsplash.com/photo-1500530855697-b586d89ba3ee | Unsplash contributors

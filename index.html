@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#060912" />
+    <meta name="description" content="枕头的星光。转动照片树，走进一片照片宇宙。" />
+    <title>枕头的星光 · 照片宇宙</title>
+    <link rel="icon" type="image/svg+xml" href="./star.svg" />
+  </head>
+  <body>
+    <main id="app">
+      <div id="scene" role="img" aria-label="可旋转的三维照片圣诞树"></div>
+      <div class="vignette" aria-hidden="true"></div>
+      <header class="topbar">
+        <div class="brand"><span class="brand-star" aria-hidden="true">✦</span><div><p>枕头的星光</p><span>A LITTLE UNIVERSE</span></div></div>
+        <div class="top-actions"><span id="mode-label">照片树</span><button id="help-button" class="icon-button" aria-label="操作说明">?</button></div>
+      </header>
+      <div id="camera-invite" class="camera-invite">
+        <p>打开摄像头，用手势控制 <span>✨</span></p>
+        <button id="camera-start" class="primary-button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 12V6a1.5 1.5 0 0 1 3 0v5-7a1.5 1.5 0 0 1 3 0v7-5a1.5 1.5 0 0 1 3 0v7-4a1.5 1.5 0 0 1 3 0v6c0 5-3 7-7 7-3 0-4.5-2-6-4l-3-4c-1-1.5 1-3 2-2l2 2Z"/></svg>开启手势控制</button>
+        <button id="use-touch" class="text-button">先用手指逛逛</button>
+      </div>
+      <div id="focus-ui" class="focus-ui" hidden><button id="focus-close" class="icon-button" aria-label="收起照片">×</button><p id="focus-caption"></p></div>
+      <div id="gesture-cursor" aria-hidden="true"></div>
+      <footer class="bottom-ui">
+        <p id="interaction-hint">轻拖旋转 · 双指缩放 · 点开照片</p>
+        <div class="control-dock" aria-label="场景操作">
+          <button id="view-toggle" class="dock-button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 1.8 6.2L20 11l-6.2 1.8L12 19l-1.8-6.2L4 11l6.2-1.8L12 3Z"/><path d="m20 17 .7 2.3L23 20l-2.3.7L20 23l-.7-2.3L17 20l2.3-.7.7-2.3Z"/></svg><span>照片宇宙</span></button>
+          <span class="dock-divider"></span>
+          <button id="control-toggle" class="dock-button" aria-label="切换手势或触控"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12V5a2 2 0 0 1 4 0v7l2-2c2-2 4 0 2 2l-1 2 3-1c1-1 3 1 1 3l-4 5H9l-5-7c-1-2 1-3 2-2l3 3"/></svg><span>触控</span></button>
+          <span class="dock-divider"></span>
+          <button id="soundless-reset" class="dock-button" aria-label="恢复视角"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10a8 8 0 1 1 1 8M4 4v6h6"/></svg></button>
+        </div>
+        <span class="demo-label">DEMO · 示例照片</span>
+      </footer>
+      <div id="toast" role="status" aria-live="polite"></div>
+      <dialog id="help-dialog">
+        <button id="help-close" class="icon-button" aria-label="关闭说明">×</button>
+        <span class="eyebrow">EXPLORE THE STARS</span><h2>随手，走进星光</h2>
+        <div class="help-grid"><div><h3>手指控制</h3><p>左右拖动，旋转照片树<br />双指靠近或远离，调整大小<br />点照片放大，点空白收起</p></div><div><h3>摄像头手势</h3><p>左右挥手，带着惯性旋转<br />移到照片旁，捏合选择<br />松开捏合，照片归位<br />双手距离，控制大小<br />张开手掌停半秒，进入宇宙<br />握拳停半秒，重新成树</p></div></div>
+        <p class="privacy-note">摄像头只在你的设备上识别手势。<br />画面不会上传、保存或录制。</p>
+        <div id="photo-list" class="accessible-photos" aria-label="照片列表"></div>
+      </dialog>
+      <div id="loading" class="loading"><span aria-hidden="true">✦</span><p>正在点亮星星…</p></div>
+      <section id="error-screen" hidden><span aria-hidden="true">✦</span><h1>星光暂时没有亮起</h1><p id="error-message">浏览器暂不支持 WebGL，请使用 Safari 或 Chrome 打开。</p><button id="reload" class="primary-button">重新打开</button></section>
+    </main>
+    <noscript>请开启 JavaScript，再来转动这棵照片树。</noscript>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
