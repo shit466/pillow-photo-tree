@@ -5,3 +5,4 @@
 @media(prefers-reduced-motion:reduce){.loading>span{animation:none}*{scroll-behavior:auto!important}}
 #scene,.vignette{transition:opacity 1.2s}.star-flight #scene,.star-flight .vignette{opacity:0}.star-flight .bottom-ui,.star-flight .topbar{opacity:0;transition:opacity .8s}
 .probe-button{position:absolute;z-index:30;right:12px;top:152px;color:#cebd9b;border:1px solid #b09a6740;background:#161b28;border-radius:12px;padding:6px;font-size:11px}
+#app{min-height:0}

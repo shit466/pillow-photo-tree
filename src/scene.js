@@ -175,7 +175,7 @@ export async function createPhotoScene({container,onSelect,onStar,onStats,onPhot
   const baseCamera=new THREE.Vector3(),starWorld=new THREE.Vector3();
   let width=1,height=1,baseZ=10;
   function resize(){width=container.clientWidth;height=container.clientHeight;camera.aspect=width/Math.max(height,1);camera.updateProjectionMatrix();
-    baseZ=Math.max(9.1,5.65/(2*Math.tan(THREE.MathUtils.degToRad(camera.fov/2))*camera.aspect));baseCamera.set(0,.3,baseZ);renderer.setSize(width,height,false);}
+    baseZ=Math.max(height<500?12.6:9.1,5.65/(2*Math.tan(THREE.MathUtils.degToRad(camera.fov/2))*camera.aspect));baseCamera.set(0,.3,baseZ);renderer.setSize(width,height,false);}
   resize();const observer=new ResizeObserver(resize);observer.observe(container);
   function project(object){scene.updateMatrixWorld(true);object.getWorldPosition(screenVec);screenVec.project(camera);return{x:(screenVec.x+1)/2,y:(1-screenVec.y)/2,z:screenVec.z};}
   function pick(x,y,magnetic=false){ndc.set(x*2-1,1-y*2);scene.updateMatrixWorld(true);raycaster.setFromCamera(ndc,camera);
